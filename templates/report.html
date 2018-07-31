@@ -1,0 +1,179 @@
+{% extends 'base.html' %}
+{% block loaders %}
+{% load static %}
+{% endblock %}
+{% block header %}
+
+{% endblock %}
+{% block body %}
+  <!-- Codebase -->
+
+  {% if report.Codebase == 'NoVersionControl' %}
+  <div class="card mb-3">
+    <div class="card-header">
+      <i class="fas fa-chart-area"></i>
+    <b>Codebase</b></div>
+    <div class="card-body">
+        <p> There is no <b>Code Base</b> for the uploaded repository</p>
+        <p> We suggest you to use 
+            <a href="https://git-scm.com/docs/git"><b>git</b></a>/
+            <a href="https://www.mercurial-scm.org/guide"><b>mercurial</b></a>/
+            <a href="https://subversion.apache.org/docs/"><b>svn</b></a> version control tools for maintaining Codebase.
+        </p>
+    </div>
+    <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> -->
+  </div>
+  {% else %}
+     <div class="card mb-3">
+        <div class="card-header">
+          <i class="fas fa-chart-area"></i>
+        <b>Codebase</b></div>
+        <div class="card-body">
+            <p> The repository Uses <b>git</b> version control tool. It's a good sign.
+          <p> Codebase - Url : <a href={{report.Codebase }} > {{ report.Codebase }}</a> </p>
+        </div>
+        <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> -->
+      </div>
+  {% endif %}
+
+    <!-- Dependencies -->
+<div class="card mb-3">
+    <div class="card-header">
+      <i class="fas fa-chart-area"></i>
+    <b>Dependencies</b></div>
+    <div class="card-body">
+        <p>Coming soon</p>
+    </div>
+    <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> -->
+  </div>
+    
+    <!-- configurations -->
+<div class="card mb-3">
+    <div class="card-header">
+      <i class="fas fa-chart-area"></i>
+    <b>Configurations</b></div>
+    <div class="card-body">
+        <p>Coming soon</p>
+    </div>
+    <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> -->
+  </div>
+    
+    <!-- Backing Services -->
+
+<div class="card mb-3">
+    <div class="card-header">
+      <i class="fas fa-chart-area"></i>
+    <b>Backing Services</b></div>
+    <div class="card-body">
+        <p>Coming soon</p>
+    </div>
+    <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> -->
+  </div>
+
+    <!-- Build, Release, Run -->
+
+<div class="card mb-3">
+    <div class="card-header">
+      <i class="fas fa-chart-area"></i>
+    <b>Build, Release, Run</b></div>
+    <div class="card-body">
+        <p>Coming soon</p>
+    </div>
+    <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> -->
+  </div>
+
+    <!-- Processes -->
+
+<div class="card mb-3">
+    <div class="card-header">
+      <i class="fas fa-chart-area"></i>
+    <b>Processes</b></div>
+    <div class="card-body">
+        <p>Coming soon</p>
+    </div>
+    <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> -->
+  </div>
+
+     <!-- Port binding -->
+
+     <div class="card mb-3">
+    <div class="card-header">
+      <i class="fas fa-chart-area"></i>
+    <b>Port binding</b></div>
+    <div class="card-body">
+        <p>Coming soon</p>
+    </div>
+    <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> -->
+  </div>
+
+     <!-- Concurrency -->
+
+     <div class="card mb-3">
+    <div class="card-header">
+      <i class="fas fa-chart-area"></i>
+    <b>Concurrency</b></div>
+    <div class="card-body">
+        <p>Coming soon</p>
+    </div>
+    <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> -->
+  </div>
+     <!-- Disposability -->
+
+
+     <div class="card mb-3">
+    <div class="card-header">
+      <i class="fas fa-chart-area"></i>
+    <b>Disposability</b></div>
+    <div class="card-body">
+        <p>Coming soon</p>
+    </div>
+    <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> -->
+  </div>
+     <!-- Dev/Prod Parity -->
+<div class="card mb-3">
+    <div class="card-header">
+      <i class="fas fa-chart-area"></i>
+    <b>Dev/Prod Parity</b></div>
+    <div class="card-body">
+        <p>Coming soon</p>
+    </div>
+    <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> -->
+  </div>
+
+
+  <!-- Logging -->
+
+  {% if report.Logging == 'ValidLog' %}
+   <div class="card mb-3">
+    <div class="card-header">
+      <i class="fas fa-chart-area"></i>
+    <b>Logging</b></div>
+    <div class="card-body">
+      <p>Log is not being written to any file. So your code follows Logging factor. Cheers!!</p>
+    </div>
+    <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> -->
+  </div>
+  {% else %}
+   <div class="card mb-3">
+    <div class="card-header">
+      <i class="fas fa-chart-area"></i>
+    <b>Logging</b></div>
+    <div class="card-body">
+      <p> Log is being written to file, This repository does not follow Logging factor, Please avoid writing application log into file.</p>
+    </div>
+    <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> -->
+  </div>
+  {% endif %}
+  
+
+  <!-- Admin Process -->
+  <div class="card mb-3">
+    <div class="card-header">
+      <i class="fas fa-chart-area"></i>
+    <b>Admin Process</b></div>
+    <div class="card-body">
+      <p> Coming soon </p>
+    </div>
+    <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> -->
+  </div>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block header %}
+{% endblock %}
+{% block sidebar %}
+<ul class="sidebar navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/MasterControl">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link " href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-folder"></i>
+            <span>Repository - Github</span>
+          </a>
+
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link " href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-folder"></i>
+            <span>Dependency - file</span>
+          </a>
+
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link " href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-folder"></i>
+            <span>Puppet Configuration</span>
+          </a>
+
+        </li>
+         <li class="nav-item dropdown">
+          <a class="nav-link " href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-folder"></i>
+            <span>Connected Components</span>
+          </a>
+
+        </li>
+       
+  
+         <li class="nav-item dropdown">
+          <a class="nav-link " href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-folder"></i>
+            <span>Jenkins</span>
+          </a>
+
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link " href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-folder"></i>
+            <span>Monitor</span>
+          </a>
+
+        </li>
+
+
+</ul>
+{% endblock %}
+{% block body %}
+<ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="#">Dell-Enthusiast</a>
+            </li>
+            <li class="breadcrumb-item active">Github Repo</li>
+          </ol>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block loaders %}
+{% load static %}
+{% endblock %}
+{% block header %}
+<script type="text/javascript">
+	console.log("Hello");
+	window.onload = function() {
+            var fileupload = $("#fileToUpload");
+            fileupload.on('change', function(){
+            	console.log("changed");
+                file_name = $('#fileToUpload')[0].files[0].name;
+                console.log(file_name);
+                if (file_name.split('.').pop() == 'zip'){
+                    $('#not-loaded').css("display","none");
+                    $('#loaded').css("display","block");
+                }
+                else{
+                    alert("select a zip file");
+                }
+            });
+        }
+        //upload-animation
+    $(document).ready(function() {
+       
+        $("#upload").click(function(e) {
+        	console.log("pressed");
+			$("#loadingmessage").css("display", "block");
+           	$("#upload_btn").css("display", "none");
+         
+        });
+       
+
+    });
+</script>
+{% endblock %}
+{% block body %}
+   
+
+           <center>
+                    <form action="/Upload/" method='POST' enctype="multipart/form-data">
+                        <p> 
+                            <div class="uploader" onclick="$('#fileToUpload').click()">
+                                <p id="not-loaded" style="margin-top: 20%;font-family: 'Sigmar One', cursive;">Click here or drag Repository Zip file</p>
+                                <p id="loaded" style="display:none;margin-top: 20%;font-family: 'Sigmar One', cursive;">Zip file loaded</p>
+                                <!-- <img id="dragged_image" src="" style="display: none;" /> -->
+                                <input type="file" name="fileToUpload" id="fileToUpload" accept="file/" required>
+                            </div>
+                        </p>
+                        </br>
+                        <div id='loadingmessage' style='display:none'>
+                            <img style="width:70px;height:auto;" src={% static 'progress.gif' %}/>
+                        </div>
+                       
+                        <br/>
+                        <p id="upload_btn">
+                            <input class="btn" id="upload" type="submit" value="Check" name="submit">
+                        </p>
+                    </form>
+                </center>
+
+{% endblock %}

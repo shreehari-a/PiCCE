@@ -1,0 +1,59 @@
+#logo{
+	font-family: 'Roboto Condensed', sans-serif;
+	font-weight: 600;
+	font-size: 30px;
+	
+}
+.uploader {
+            position: relative;
+            overflow: hidden;
+            width: 600px;
+            height: 400px;
+            background: #f3f3f3;
+            border: 2px dashed #e8e8e8;
+            text-align: center;
+        }
+        
+        #fileToUpload {
+            position: absolute;
+            width: 600px;
+            height: 400px;
+            top: -50px;
+            left: 0;
+            z-index: 2;
+            opacity: 0;
+            cursor: pointer;
+        }
+        
+        .uploader img {
+            position: absolute;
+            width: 600px;
+            height: 400px;
+            top: -1px;
+            left: -1px;
+            z-index: 1;
+            border: none;
+        }
+        
+        .form-control {
+            width: 40% !important;
+            text-align: center;
+        }
+        
+        #upload {
+            color: white;
+            background-color: #353836;
+            width: 600px;
+        }
+        
+        #upload:hover {
+            background-color: #4f5450;
+        }
+        
+       
+        .type_input {
+            margin: 8px;
+	        }
+#upload{
+	font-family: 'Roboto Condensed', sans-serif;
+}

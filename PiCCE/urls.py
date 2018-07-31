@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from Validator import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path(r'', views.index),
+    path('MasterControl/', views.MasterControl),
+    path('Upload/', views.Upload),
+    path('Dell-Enthusiast/', views.Dell_Enthusiast),
 ]

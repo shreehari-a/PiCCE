@@ -1,14 +1,14 @@
 import re
 
 class Codebase(object):
-	def __init__(self, config_file):
-		self.config_file = config_file+'/.git/config'
-	
-	def Validate_git(self):
+	def __init__(self):
+		pass
+
+	def git(self, config_file):
 		try:
-			config_file = open(self.config_file, 'r')
+			config_file = open(config_file, 'r')
 		except:
-			return("NoVersionControl")
+			return("invalid", '')
 		
 		lines = config_file.readlines()
 
@@ -19,4 +19,13 @@ class Codebase(object):
 				# remote_origin_l = remote_origin.split('\n')
 		url = lines[ind+1]
 		url = re.split("=[' ']", url)[1]
-		return url
+		return ('valid',url.rstrip('\r\n'))
+
+	def svn():
+		pass
+
+	def mercurial():
+		pass
+
+	def tfs():
+		pass

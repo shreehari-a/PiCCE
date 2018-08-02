@@ -25,9 +25,8 @@ SECRET_KEY = 'k@b2)7@4uel1sdn$=)3g=kk$lt#pu7$dbt$-+%$$e$!4po(4qy'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-
+ALLOWED_HOSTS = ['10.87.226.78','127.0.0.1']
+    
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Validator',
 ]
 
 MIDDLEWARE = [

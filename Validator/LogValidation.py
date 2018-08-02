@@ -2,22 +2,21 @@ from os import listdir
 from os.path import isfile, join
 import os
 
+from .files_list import ListFiles
 		
 
 class Validator(object):
 	def __init__(self, foldername):
 		self.foldername = foldername
 
-	def check_files(self):
-		file_list = []
-		for root, dirs, files in os.walk(self.foldername, topdown=False):
-			for name in files:
-				item = os.path.join(root, name)
-				file_list.append(item)
-		return file_list
+	def PythonApp(self):
+		files = ListFiles(self.foldername).recursive()
+		return "valid"
+		pass
 
-	def Dotnet_Log(self):
-		onlyfiles = self.check_files()
+	def DotnetApp(self):
+		onlyfiles = ListFiles(self.foldername).recursive()
+		print(onlyfiles)
 		file_ar = {}
 		for file in onlyfiles:
 			file_ar[file] = []
@@ -47,11 +46,6 @@ class Validator(object):
 				#print(search)
 				if (k in data for k in search):
 					file_ar[file].append("Invalid")
-		print
-		print
-		print(file_ar)
-		print
-		print
 		flag = 0
 		for key,value in file_ar.items():
 		
@@ -62,9 +56,9 @@ class Validator(object):
 				else:
 					pass
 		if flag == 0:
-			return "ValidLog"
+			return "valid"
 		else:
-			return "InvalidLog"
+			return "invalid"
 
 	# if 'StreamWriter' in data:
 	# 	pos = data.find('StreamWriter')
